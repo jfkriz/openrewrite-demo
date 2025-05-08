@@ -44,6 +44,13 @@ tasks.withType<Javadoc>() {
     options.encoding = "UTF-8"
 }
 
+tasks.withType<Test> {
+    // useJUnitPlatform()
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
+}
+
 rewrite {
     activeRecipe(
 //            "org.openrewrite.java.RemoveUnusedImports",
